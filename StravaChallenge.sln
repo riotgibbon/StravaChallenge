@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StravaChallenge", "StravaChallenge\StravaChallenge\StravaChallenge.csproj", "{3B32967B-137C-41C6-B8AA-6BC3DDDA77E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StravaChallenge.MVC", "StravaChallenge.MVC\StravaChallenge.MVC.csproj", "{3B32967B-137C-41C6-B8AA-6BC3DDDA77E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
