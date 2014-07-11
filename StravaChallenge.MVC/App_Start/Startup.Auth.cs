@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using IdentityManagement.Strava;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.Google;
+
 using Owin;
 using System;
 using StravaChallenge.Models;
@@ -55,6 +55,7 @@ namespace StravaChallenge
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+            app.UseStravaAuthentication();
         }
     }
 }
