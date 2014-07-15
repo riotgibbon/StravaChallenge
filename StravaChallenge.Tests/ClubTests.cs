@@ -36,16 +36,29 @@ namespace StravaChallenge.Tests
         private It should_have_first_member_Id_13187 = () => clubMembers[0].id.ShouldEqual(13187);
     }
 
-    public class WhenGettingClubSegmentAttempts : GetClub
-    {
-        private static int segmentId = 782179;
-        private static DateTime startTime = new DateTime(2014,7,5);
-        private static DateTime endTime = new DateTime(2014,7,27,23,59,59);
-        private static List<SegmentEffortDTO.SegmentEffort> segmentEfforts;
 
-        private Because of = () => segmentEfforts = Segment.Efforts(accessToken, segmentId, startTime, endTime).Result;
+    public class SegmentAttempts : GetClub
+    {
+        protected static int segmentId = 782179;
+        protected static DateTime startTime = new DateTime(2014, 7, 5);
+        protected static DateTime endTime = new DateTime(2014, 7, 27, 23, 59, 59);
+        protected static List<SegmentEffortDTO.SegmentEffort> segmentEfforts;
+        private Establish context = () =>
+        {
+            segmentEfforts = Segment.Efforts(accessToken, segmentId, startTime, endTime).Result;
+        };
+        protected static List<SegmentEffortDTO.SegmentEffort> clubSegmentEfforts;
+        private Because of = () => clubSegmentEfforts = Segment.ClubEfforts(clubMembers, segmentEfforts);
 
         private It should_have_segmentEfforts = () => segmentEfforts.ShouldNotBeNull();
         private It should_have_min_237_segmentEfforts = () => segmentEfforts.Count.ShouldBeGreaterThanOrEqualTo(237);
+
+        private It should_have_club_segment_efforts = () => clubSegmentEfforts.ShouldNotBeNull();
+
+        private It should_have_min_27_club_segment_efforts =
+            () => clubSegmentEfforts.Count.ShouldBeGreaterThanOrEqualTo(27);
     }
+
+  
+
 }
