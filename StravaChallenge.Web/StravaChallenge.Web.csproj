@@ -478,6 +478,9 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\vendor\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.min.js" />
@@ -493,9 +496,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="robots.txt" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\404.cshtml" />

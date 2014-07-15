@@ -26,7 +26,7 @@ namespace App.StravaChallenge.Web
             }
             else
             {
-                Response.Redirect("~/",false);
+                Response.Redirect("~/", false);
             }
             var details = new StravaDetails
             {
@@ -35,10 +35,14 @@ namespace App.StravaChallenge.Web
                 Host = StravaConfiguration.StravaHost
             };
             var connectToStrava = new ConnectToStrava(this.httpClient, details);
-            string redirectUri="/stats";
+            string redirectUri = "/stats";
             var tokenResponse = await connectToStrava.SwapCodeForToken(code, redirectUri);
-            Response.Cookies.Add(new HttpCookie("token", tokenResponse.access_token)); 
-
+            if (tokenResponse != null && tokenResponse.athlete != null)
+            {
+                Response.Cookies.Add(new HttpCookie("token", tokenResponse.access_token));
+                Response.Write("Hello " + tokenResponse.athlete.firstname);
+            }
         }
+    
     }
 }
