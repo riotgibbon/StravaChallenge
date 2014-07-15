@@ -1,6 +1,6 @@
 ﻿/// <reference path="_references.js" />
 /// <reference path="directives.js" />
-
+/*
 'use strict';
 
 describe('Directives', function () {
@@ -18,3 +18,5 @@ describe('Directives', function () {
         });
     });
 });
+
+*/

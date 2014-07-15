@@ -40,7 +40,7 @@ namespace App.StravaChallenge.Web
             if (tokenResponse != null && tokenResponse.athlete != null)
             {
                 Response.Cookies.Add(new HttpCookie("token", tokenResponse.access_token));
-                Response.Write("Hello " + tokenResponse.athlete.firstname);
+                Response.Write("Hello " + tokenResponse.athlete.firstname + " " + tokenResponse.access_token);
             }
         }
     
