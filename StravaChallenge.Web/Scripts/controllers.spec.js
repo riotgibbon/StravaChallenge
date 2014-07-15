@@ -1,6 +1,6 @@
 ﻿/// <reference path="_references.js" />
 /// <reference path="controllers.js" />
-
+/*
 'use strict';
 
 describe('Controllers: HomeCtrl', function () {
@@ -62,3 +62,4 @@ describe('Controllers: Error404Ctrl', function () {
         expect($scope.$root.title).toBe('Error 404: Page Not Found');
     });
 });
+*/

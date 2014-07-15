@@ -1,6 +1,6 @@
 ﻿/// <reference path="_references.js" />
 /// <reference path="services.js" />
-
+/*
 'use strict';
 
 describe('service', function () {
@@ -12,3 +12,5 @@ describe('service', function () {
         }));
     });
 });
+
+*/
