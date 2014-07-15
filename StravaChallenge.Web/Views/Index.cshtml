@@ -1,0 +1,37 @@
+﻿@using IdentityManagement
+@{
+    PageData["title"] = "AngularJS SPA Template for Visual Studio";
+    var target = "https://app.strava.com/oauth/authorize?client_id="+ StravaConfiguration.ClientId + "&response_type=code&approval_prompt=force&redirect_uri=" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + "/exchangetoken.aspx";
+}
+<style>
+    .stravaConnect {
+        background-image: url('/images/ConnectWithStrava.png');
+        width: 172px;
+        height: 31px
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("p").text("The DOM is now loaded and can be manipulated.");
+    });
+</script>
+<h2>Welcome!</h2>
+@{
+
+    
+}
+
+<a href="@target"><img src="~/Images/ConnectWithStrava.png" /></a>
+
+<p>This is just a demo page.  </p>
+
+<div class="form-group">
+    <button class="btn  stravaConnect" type="submit" ng-click="count = count + 1" ng-init="count=0"></button>
+</div>
+count: {{count}}
+
+
+
+
+<iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='http://app.strava.com/clubs/Stows/latest-rides/23e181018c94dce0a300f567f543a72b7440d012?show_rides=true'></iframe>
+
