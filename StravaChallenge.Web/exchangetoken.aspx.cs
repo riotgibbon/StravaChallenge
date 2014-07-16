@@ -14,7 +14,7 @@ namespace App.StravaChallenge.Web
     public partial class exchangetoken : System.Web.UI.Page
     {
         private HttpClient httpClient = new HttpClient();
-
+        private static int count;
         protected async void Page_Load(object sender, EventArgs e)
         {
             string code = null;
@@ -39,8 +39,9 @@ namespace App.StravaChallenge.Web
             var tokenResponse = await connectToStrava.SwapCodeForToken(code, redirectUri);
             if (tokenResponse != null && tokenResponse.athlete != null)
             {
+                
                 Response.Cookies.Add(new HttpCookie("token", tokenResponse.access_token));
-                Response.Write("Hello " + tokenResponse.athlete.firstname + " " + tokenResponse.access_token);
+                Response.Write("Hello " + tokenResponse.athlete.firstname + " " + tokenResponse.access_token + ": " + count++);
             }
         }
     
